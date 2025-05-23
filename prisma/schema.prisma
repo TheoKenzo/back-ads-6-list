@@ -18,3 +18,12 @@ model AccessKey {
   id  String @id @default(uuid())
   key String @unique
 }
+
+model ToDoItem {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  isChecked Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
